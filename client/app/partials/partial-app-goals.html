@@ -26,6 +26,16 @@
             placeholder="What will you do to achieve your goal?"></textarea>
         </div>
       </div>
+      <!-- Select a category -->
+      <div class="row">
+        <label class="col-md-2">Category:</label>
+        <div class="col-md-10">
+          <!-- Populates drop-down list of categories -->
+          <select class="form-control" id="goalSelect" ng-model="input.category"
+            ng-options="category as category for category in categories">
+          </select>
+        </div>
+      </div>
       <br>
       <!-- Goal due date input -->
       <div class="row">
