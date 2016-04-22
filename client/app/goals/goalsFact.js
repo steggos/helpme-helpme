@@ -29,5 +29,24 @@ function Goals($http) {
         return res.data;
       });
     },
+
+    getCatagories: function () {
+      return [
+          'Diet',
+          'Paleo',
+          'Weight Loss',
+          'Fitness',
+          'Workout',
+          'Calisthenics',
+        ];
+
+      // return $http({
+      //   method: 'GET',
+      //   url: '/api/categories',
+      // })
+      // .then(function (res) {
+      //   return res.data;
+      // });
+    }
   };
 }

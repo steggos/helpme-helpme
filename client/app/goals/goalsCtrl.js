@@ -51,14 +51,13 @@ function GoalsController($scope, auth, Goals) {
   };
 
   $scope.getCatagories = function () {
-    $scope.categories = [
-      'Diet',
-      'Paleo',
-      'Weight Loss',
-      'Fitness',
-      'Workout',
-      'Calisthenics',
-    ];
+    $scope.categories = Goals.getCatagories()
+      // .then(function (categories) {
+      //   $scope.categories = data;
+      // })
+      // .catch(function (error) {
+      //   console.log(error);
+      // });
   };
 
   // Once auth0 profile info has been set, query our database for user's goals
