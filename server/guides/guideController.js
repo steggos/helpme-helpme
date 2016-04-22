@@ -1,14 +1,18 @@
 var Guide = require('./guideSchema');
 
 module.exports = {
-  getAll: function(cb) {
+  getAll: function(req, res) {
     Guide.find()
-    .exec(cb);
+    .then(function(guides) {
+      res.status(200).json(guides);
+    });
   },
-  getCategories: function(category, cb) {
+  getCategories: function(req, res) {
     Guide.find()
-    .where('category').in([category])
+    .where('category').in([req.params.category])
     .limit(3)
-    .exec(cb);
+    .then(function(guides) {
+      res.status(200).json(guides)
+    });
   }
 };
