@@ -5,5 +5,10 @@ module.exports = {
     Guide.find()
     .exec(cb);
   },
-  getCategories: function(category, cb) {}
+  getCategories: function(category, cb) {
+    Guide.find()
+    .where('category').in([category])
+    .limit(3)
+    .exec(cb);
+  }
 };
