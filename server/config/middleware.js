@@ -9,9 +9,10 @@ app.use('/api/path-you-want-to-protect', jwtCheck);
 
 // For local development, make sure a file named `.env` containing your AUTH0_CLIENT_SECRET,
 // AUTH0_CLIENT_ID, and AUTH0_DOMAIN is in your root directory (but don't commit it to git,
-// it should be gitignored). Run your node server from that root directory,
-// then uncomment line below to load your .env file:
-// dotenv.load();
+// it should be gitignored). Run your node server from that root directory
+if (!process.env.NODE_ENV) {
+  dotenv.load();
+}
 
 var jwtCheck = jwt({
   secret: new Buffer(process.env.AUTH0_CLIENT_SECRET, 'base64'),
