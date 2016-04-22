@@ -7,7 +7,7 @@ module.exports = {
       res.status(200).json(guides);
     });
   },
-  getCategories: function(req, res) {
+  getByCategory: function(req, res) {
     Guide.find()
     .where('category').in([req.params.category])
     .limit(3)

@@ -1,6 +1,7 @@
 var goalController = require('../goals/goalController');
 var userController = require('../users/userController');
 var postController = require('../posts/postController');
+var guideController = require('../guides/guideController');
 var helpers = require('./helper');
 
 module.exports = function(app, express) {
@@ -31,6 +32,9 @@ module.exports = function(app, express) {
 
   app.post('/api/comment/:user_id', postController.addComment);
   app.post('/api/signin/', userController.addUser);
+
+  app.get('/api/guides/', guideController.getAll);
+  app.get('/api/guides/:category', guideController.getByCategory);
 
   // If a request is sent somewhere other than the routes above,
   // send it through our custom error handler
