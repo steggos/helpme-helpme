@@ -26,8 +26,8 @@ config.$inject = ['authProvider', '$stateProvider', '$urlRouterProvider', '$http
 function config(authProvider, $stateProvider, $urlRouterProvider, $httpProvider, jwtInterceptorProvider) {
   // Auth 0 init
   authProvider.init({
-    domain: 'app49478086.auth0.com',
-    clientID: 'eUhGC2gbYwdyQ9J6V1570qHSrCxZY6jw',
+    domain: 'app49768385.auth0.com',
+    clientID: 'IRIUIx2mAmGGl2w1IOK656Mqc1lygg4R',
     loginState: 'signin'
   });
 
