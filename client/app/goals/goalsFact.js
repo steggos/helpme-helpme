@@ -40,6 +40,7 @@ function Goals($http) {
           'Calisthenics',
         ];
 
+      // TODO: replace above once route has been created
       // return $http({
       //   method: 'GET',
       //   url: '/api/categories',
@@ -47,6 +48,40 @@ function Goals($http) {
       // .then(function (res) {
       //   return res.data;
       // });
-    }
+    },
+
+    getGuides: function (category) {
+      return {
+        plans: [
+          {
+            name: 'Paleo Restart',
+            category: ['Diet', 'Paleo', 'Weight Loss'],
+            thumbnail: 'https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97130&w=100&h=130',
+            file: 'file:///Users/OggimusPrime/Downloads/Visual-Impact-FBB.pdf',
+          },
+          {
+            name: 'Paleo Restart',
+            category: ['Diet', 'Paleo', 'Weight Loss'],
+            thumbnail: 'https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97130&w=100&h=130',
+            file: 'file:///Users/OggimusPrime/Downloads/Visual-Impact-FBB.pdf',
+          },
+          {
+            name: '30 Day to get Fit',
+            category: ['Fitness', 'Workout', 'Calisthenics'],
+            thumbnail: 'https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97130&w=100&h=130',
+            file: 'file:///Users/OggimusPrime/Downloads/Visual-Impact-FBB.pdf',
+          },
+        ],
+      };
+
+      // TODO: Replace once data is in the system
+      // return $http({
+      //   method: 'GET',
+      //   url: '/api/guides/' + category,
+      // })
+      // .then(function (res) {
+      //   return res.data;
+      // });
+    },
   };
 }
