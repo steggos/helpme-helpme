@@ -36,24 +36,25 @@ module.exports = function(app, express) {
 
   app.get('/api/guides/', guideController.getAll);
   app.get('/api/guides/:category', guideController.getByCategory);
+  app.get('/api/categories', guideController.getCategories);
 
-  app.post('/api/charge/', function(req, res) {
+  app.post('/api/charge/', function (req, res) {
     var stripeToken = req.body.id;
     var amount = 999;
 
     stripe.charges.create({
-        source: stripeToken,
-        currency: 'usd',
-        amount: amount,
-        description: 'Example charge',
+      source: stripeToken,
+      currency: 'usd',
+      amount: amount,
+      description: 'Example charge',
     },
-    function(err, charge) {
-        if (err) {
-          console.error(err);
-            res.send(500, err);
-        } else {
-            res.send(204);
-        }
+    function (err, charge) {
+      if (err) {
+        console.error(err);
+        res.send(500, err);
+      } else {
+        res.send(204);
+      }
     });
   });
 

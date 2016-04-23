@@ -31,23 +31,23 @@ function Goals($http) {
     },
 
     getCatagories: function () {
-      return [
-          'Diet',
-          'Paleo',
-          'Weight Loss',
-          'Fitness',
-          'Workout',
-          'Calisthenics',
-        ];
+      // return [
+      //     'Diet',
+      //     'Paleo',
+      //     'Weight Loss',
+      //     'Fitness',
+      //     'Workout',
+      //     'Calisthenics',
+      //   ];
 
-      // TODO: replace above once route has been created
-      // return $http({
-      //   method: 'GET',
-      //   url: '/api/categories',
-      // })
-      // .then(function (res) {
-      //   return res.data;
-      // });
+      return $http({
+        method: 'GET',
+        url: '/api/categories',
+      })
+      .then(function (res) {
+        console.log(res);
+        return res.data;
+      });
     },
 
     getGuides: function (category) {
@@ -83,6 +83,7 @@ function Goals($http) {
       //   url: '/api/guides/' + category,
       // })
       // .then(function (res) {
+      //   console.log('Data');
       //   return res.data;
       // });
     },

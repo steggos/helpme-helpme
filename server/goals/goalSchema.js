@@ -8,10 +8,10 @@ var GoalSchema = new Schema({
   description: { type: String },
   category: String,
   due_date: { type: Date },
-  posts: [PostSchema]
+  posts: [PostSchema],
 },
 {
-  timestamps: true
+  timestamps: true,
 });
 
 module.exports = GoalSchema;
