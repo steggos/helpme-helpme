@@ -51,15 +51,13 @@ function GoalsController($scope, auth, Goals) {
   };
 
   $scope.getCatagories = function () {
-    $scope.categories = Goals.getCatagories();
-    console.log($scope.categories);
-    // TODO: implement once data is in system
-    // .then(function (categories) {
-    //   $scope.categories = data;
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
+    Goals.getCatagories()
+      .then(function (data) {
+        $scope.categories = data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   // Watches for changes on the category drop down

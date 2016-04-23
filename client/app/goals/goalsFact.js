@@ -45,7 +45,6 @@ function Goals($http) {
         url: '/api/categories',
       })
       .then(function (res) {
-        console.log(res);
         return res.data;
       });
     },
