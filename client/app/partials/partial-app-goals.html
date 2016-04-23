@@ -50,13 +50,14 @@
     </form>
   </div>
 
+  <!-- Suggested Guides -->
   <div class="panel panel-default" ng-show="guides">
     <div class="panel-body">
       <legend>Suggested Guides - Premium User</legend>
       <div class="row">
-        <div class="guides col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="guide in guides.plans">
+        <div class="guides col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="guide in guides">
           <div class="row">
-            <img class="guide-img" ng-src="{{ guide.thumbnail }}">
+            <img class="guide-img" ng-src="{{ guide.icon }}">
           </div>
           <div class="row">
             <h5>{{ guide.name }}</h5>

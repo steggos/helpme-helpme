@@ -69,14 +69,13 @@ function GoalsController($scope, auth, Goals) {
   });
 
   $scope.getGuides = function (category) {
-    // Goals.getGuides(category)
-    //   .then(function (guides) {
-    //     $scope.guides = guides;
-    //     console.log($scope.guides);
-    //   })
-    //   .catch(function (error) {
-    //     console.error(error);
-    //   });
+    Goals.getGuides(category)
+      .then(function (guides) {
+        $scope.guides = guides;
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   };
 
   // Once auth0 profile info has been set, query our database for user's goals
