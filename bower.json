@@ -25,7 +25,11 @@
     "angular-animate": "^1.5.3",
     "angular-bootstrap": "0.14.3",
     "bootstrap-sass": "^3.3.6",
-    "angular-payments": "*"
+    "angular-payments": "*",
+    "a0-angular-storage": "^0.0.15",
+    "angular-jwt": "^0.0.9",
+    "angular-cookies": "^1.5.5",
+    "auth0-angular": "^4.1.0"
   },
   "resolutions": {
     "angular": "^1.5.3"
