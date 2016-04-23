@@ -10,12 +10,12 @@
     <form class="panel-body" ng-submit="searchFriend()">
       <legend>Find Friend</legend>
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-9">
           <input class="form-control" type="text" ng-model="input.search"
             placeholder="Search">
         </div>
-        <div class="col-md-2">
-          <input class="btn btn-primary" type="submit" value="Submit" />
+        <div class="col-md-3">
+          <input class="btn btn-primary pull-right" type="submit" value="Submit" />
         </div>
       </div>
     </form>
@@ -26,10 +26,10 @@
     ng-repeat="user in searchData.users | limitTo: 10 | orderBy:'lastname'">
     <div class="panel-body">
       <div class="row">
-        <span class="col-md-10">
+        <span class="col-md-9">
           {{user.firstname}} {{user.lastname}} ({{user.username}})</span>
-        <div class="col-md-2">
-          <button class="btn btn-primary" ng-click="addFriend(user.auth_id)">Add Friend</button>
+        <div class="col-md-3">
+          <button class="btn btn-primary pull-right" ng-click="addFriend(user.auth_id)">Add Friend</button>
         </div>
       </div>
     </div>
@@ -68,10 +68,10 @@
     <!-- Panel body with link to friend's profile and button to remove friend -->
     <div class="panel-body">
       <div class="row">
-        <a class="col-md-10" ui-sref="app.viewfriend({ friendID: friend.friend.auth_id })">
+        <a class="col-md-9" ui-sref="app.viewfriend({ friendID: friend.friend.auth_id })">
           {{friend.friend.firstname}} {{friend.friend.lastname}} ({{friend.friend.username}})</a>
-        <div class="col-md-2">
-          <button class="btn btn-primary" ng-click="removeFriend(friend.friend.auth_id)">Remove</button>
+        <div class="col-md-3">
+          <button class="btn btn-primary pull-right" ng-click="removeFriend(friend.friend.auth_id)">Remove</button>
         </div>
       </div>
     </div>
