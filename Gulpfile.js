@@ -20,7 +20,7 @@ gulp.task('lint', function() {
       .pipe($.jshint.reporter('fail'));
 });
 
-gulp.task('optimise', function() {
+gulp.task('optimize', function() {
   return gulp.src(paths.scripts)
       .pipe($.sourcemaps.init())
       .pipe($.concat('app.js'))
@@ -39,7 +39,8 @@ gulp.task('sync', function () {
   sync.init({
     notify: true,
     injectChanges: true,
-    files: paths.scripts.concat(paths.html, paths.css),
+    reloadDelay: 3000,
+    files: paths.html.concat(['./client/dist/app.min.js', './client/dist/style.min.css']),
     proxy: 'localhost:3000',
     port: 5000
   });
@@ -49,7 +50,8 @@ gulp.task('sync', function () {
 // Tasks 'sass' for setting up bootstrap-sass and sass compiling
 var config = {
   sassDir: './client/assets/sass',
-  bowerDir: './client/lib'
+  bowerDir: './client/lib',
+  appDir: './client/app'
 };
 
 var autoprefixerOptions = {
@@ -77,6 +79,7 @@ gulp.task('sass', function() {
 // Rerun the 'sass' task when a file changes
 gulp.task('watch', function() {
   gulp.watch(config.sassDir + '/*.scss', ['sass']);
+  gulp.watch('./client/app/**/*.js', ['optimize']);
 });
 
 
@@ -107,6 +110,6 @@ gulp.task('nodemon', function (cb) {
         });
 });
 
-gulp.task('default', ['sass', 'nodemon', 'sync']);
+gulp.task('default', ['sass', 'optimize', 'nodemon', 'sync', 'watch']);
 
-gulp.task('deploy', [/*'lint',*/ /*'test',*/ 'optimise', 'sass']);
+gulp.task('deploy', [/*'lint',*/ /*'test',*/ 'optimize', 'sass']);
