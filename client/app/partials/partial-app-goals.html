@@ -50,6 +50,25 @@
     </form>
   </div>
 
+  <div class="panel panel-default" ng-show="guides">
+    <div class="panel-body">
+      <legend>Suggested Guides - Premium User</legend>
+      <div class="row">
+        <div class="guides col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="guide in guides.plans">
+          <div class="row">
+            <img class="guide-img" ng-src="{{ guide.thumbnail }}">
+          </div>
+          <div class="row">
+            <h5>{{ guide.name }}</h5>
+          </div>
+          <div class="row">
+            <p>{{ guide.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <legend>Goals</legend>
   <!-- Panels for each of the user's existing goals -->
   <div class="goal panel panel-primary"
