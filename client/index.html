@@ -4,28 +4,28 @@
 <head>
   <meta charset="utf-8" />
   <title>Help Me Help Me!</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="dist/style.min.css" />
   <link rel="icon" type="image/ico" href="assets/images/favicon.ico" />
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular-animate/angular-animate.js"></script>
-  <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular-animate/angular-animate.min.js"></script>
+  <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
   <!-- Added requirements for Auth0 - Begin -->
-  <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
   <!-- We use client cookies to save the user credentials -->
-  <script src="//code.angularjs.org/1.2.16/angular-cookies.min.js"></script>
+  <script src="lib/angular-cookies/angular-cookies.min.js"></script>
 
   <!-- Auth0 Lock script and AngularJS module -->
-  <script src="//cdn.auth0.com/js/lock-9.0.min.js"></script>
+  <script src="lib/auth0-lock/build/auth0-lock.min.js"></script>
   <!-- angular-jwt and angular-storage -->
-  <script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js"></script>
-  <script type="text/javascript" src="//cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+  <script src="lib/a0-angular-storage/dist/angular-storage.min.js"></script>
+  <script src="lib/angular-jwt/dist/angular-jwt.min.js"></script>
 
-  <script src="//cdn.auth0.com/w2/auth0-angular-4.js"> </script>
+  <script src="lib/auth0-angular/build/auth0-angular.min.js"> </script>
 
   <!-- Moment Support for date/time differences -->
-  <script src="lib/moment/moment.js"></script>
-  <script src="lib/angular-moment/angular-moment.js"></script>
+  <script src="lib/moment/min/moment.min.js"></script>
+  <script src="lib/angular-moment/angular-moment.min.js"></script>
 
   <!-- Setting the right viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -37,26 +37,13 @@
     <!-- Where our content will be injected -->
     <div class="row" ui-view></div>
   </div>
-  <!-- Where our script files are located -->
-  <script src="app/auth/services.js"></script>
-  <script src="app/auth/loginCtrl.js"></script>
-  <script src="app/goals/goalsCtrl.js"></script>
-  <script src="app/goals/goalsFact.js"></script>
-  <script src="app/friends/friendsCtrl.js"></script>
-  <script src="app/friends/friendsFact.js"></script>
-  <script src="app/premium/premiumCtrl.js"></script>
-  <script src="app/premium/premiumFact.js"></script>
-  <script src="app/profile/profileCtrl.js"></script>
-  <script src="app/profile/profileFact.js"></script>
-  <script src="app/profile/friendProfileCtrl.js"></script>
-  <script src="app/main/mainCtrl.js"></script>
-  <script src="app/auth/appCtrl.js"></script>
-  <script src="app/app.js"></script>
+  
+  <script src="dist/app.min.js"></script>
   <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   <script type="text/javascript">
     Stripe.setPublishableKey('pk_test_e5dLh5KY2HToKtUUXoryc4rj');
   </script>
-  <script src="/lib/angular-payments/lib/angular-payments.js"></script>
+  <script src="/lib/angular-payments/lib/angular-payments.min.js"></script>
 </body>
 
 </html>

@@ -9,7 +9,8 @@ var paths = {
   server: ['server/**/*.js'],
   html: ['client/app/**/*.html', 'client/index.html'],
   css: ['client/assets/css/style.css'],
-  test: ['specs/**/*.js']
+  test: ['specs/**/*.js'],
+  dist: './client/dist'
 };
 
 gulp.task('lint', function() {
@@ -23,11 +24,11 @@ gulp.task('optimise', function() {
   return gulp.src(paths.scripts)
       .pipe($.sourcemaps.init())
       .pipe($.concat('app.js'))
-      .pipe(gulp.dest('./client/dist'))
+      .pipe(gulp.dest(paths.dist))
       .pipe($.rename('app.min.js'))
       .pipe($.uglify())
       .pipe($.sourcemaps.write('./'))
-      .pipe(gulp.dest('./client/dist'))
+      .pipe(gulp.dest(paths.dist))
       .on('error', function(err) {
         console.error(err);
       });
@@ -67,7 +68,10 @@ gulp.task('sass', function() {
     )
     .pipe($.autoprefixer(autoprefixerOptions))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('./client/assets/css'));
+    .pipe(gulp.dest('./client/assets/css'))
+    .pipe($.cssmin())
+    .pipe($.rename({suffix: '.min'}))
+    .pipe(gulp.dest(paths.dist));
 });
 
 // Rerun the 'sass' task when a file changes
