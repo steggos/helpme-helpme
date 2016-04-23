@@ -32,11 +32,11 @@
     </div>
   </script>
 
-
  <!-- payment panel -->
   <div class="panel panel-default">
     <div class="panel-body">
       <legend>Not A Premium User?</legend>
+      <div class="row">
         <div class="col-md-12">
           <form stripe-form="stripeCallback">
             <input ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card"/>
@@ -45,6 +45,7 @@
               <button type="submit">Submit</button>
           </form>
         </div>
+      </div>
     </div>
   </div>
   <!-- User information panel -->
