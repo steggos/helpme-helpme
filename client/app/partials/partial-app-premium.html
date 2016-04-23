@@ -4,12 +4,11 @@
 </div>
 
 <!-- Container for the rest of the page -->
-<div class="content-body">
+<div class="content-body row">
  <!-- payment panel -->
   <div class="panel panel-default">
     <div class="panel-body">
       <legend>Not A Premium User?</legend>
-      <div class="row">
         <div class="col-md-12">
           <form stripe-form="stripeCallback">
             <input ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card"/>
@@ -18,7 +17,6 @@
               <button type="submit">Submit</button>
           </form>
         </div>
-      </div>
     </div>
   </div>
   <!-- User information panel -->
@@ -27,15 +25,18 @@
     <div class="panel-body">
       <legend>Goal Guides</legend>
       <div class="row">
-        <div class="col-md-4" ng-repeat="guide in guides">
+        <div class="col-md-4 col-sm-12" ng-repeat="guide in guides">
           <div class="row">
-            <a href="{{ guide.file }}"><img ng-src="{{ guide.icon }}" class="col-md-12"></a>
+            <div class="col-md-12">
+              <a href="{{ guide.file }}"><img class="img-responsive" ng-src="{{ guide.icon }}"></a>
+            </div>
           </div>
           <div class="row">
-            <h5 class="col-md-12">{{ guide.name }} by {{ guide.author }}</h5>
-          </div>
-          <div class="row">
-            <p class="col-md-12">{{ guide.description }}</p>
+            <div class="col-md-12">
+              <h5>{{ guide.name }}</h5>
+              <h6>By {{ guide.author }}</h6>
+              <p>{{ guide.description }}</p>
+            </div>
           </div>
         </div>
       </div>
