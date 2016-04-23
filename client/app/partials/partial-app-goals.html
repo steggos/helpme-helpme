@@ -43,7 +43,7 @@
         <div class="col-md-7">
           <input class="form-control" type="date" ng-model="input.due_date" />
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 before-btn">
           <input class="btn btn-primary pull-right" type="submit" value="Add Goal" />
         </div>
       </div>
@@ -55,15 +55,18 @@
     <div class="panel-body">
       <legend>Suggested Guides - Premium User</legend>
       <div class="row">
-        <div class="guides col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="guide in guides">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" ng-repeat="guide in guides">
           <div class="row">
-            <img class="guide-img" ng-src="{{ guide.icon }}">
+            <div class="col-md-12">
+              <a href="{{ guide.file }}" target="_blank"><img class="img-thumbnail" ng-src="{{ guide.icon }}"></a>
+            </div>
           </div>
           <div class="row">
-            <h5>{{ guide.name }}</h5>
-          </div>
-          <div class="row">
-            <p>{{ guide.description }}</p>
+            <div class="col-md-12">
+              <h5>{{ guide.name }}</h5>
+              <h6>By {{ guide.author }}</h6>
+              <p>{{ guide.description }}</p>
+            </div>
           </div>
         </div>
       </div>
