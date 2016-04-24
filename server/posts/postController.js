@@ -10,14 +10,24 @@ module.exports = {
         var profile = {
           username: user.username,
           firstname: user.firstname,
-          lastname: user.lastname
+          lastname: user.lastname,
+          premium: user.premium,
         };
         res.status(200).json(profile);
       });
   },
 
   updateProfile: function(req, res) {
-    // TO-DO: implement updating of profile info
+     User.findOneAndUpdate({ auth_id: user_id },{$set:req.body}, {new: true})
+      .then(function(user) {
+        var profile = {
+          username: user.username,
+          firstname: user.firstname,
+          lastname: user.lastname,
+          premium: user.premium,
+        };
+        res.status(200).json(profile);
+      });
   },
 
   getPosts: function(req, res) {
