@@ -9,6 +9,4 @@ var guideSchema = new mongoose.Schema({
   description: String,
 });
 
-var Guide = mongoose.model('guide', guideSchema);
-
-module.exports = Guide;
+module.exports = mongoose.model('guide', guideSchema);

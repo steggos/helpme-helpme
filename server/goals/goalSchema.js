@@ -1,18 +1,16 @@
 var mongoose = require('mongoose');
-var PostSchema = require('../posts/postSchema.js');
+var postSchema = require('../posts/postSchema.js');
 
-var Schema = mongoose.Schema;
-
-var GoalSchema = new Schema({
+var goalSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String },
   category: String,
   icon: String,
   due_date: { type: Date },
-  posts: [PostSchema],
+  posts: [postSchema],
 },
 {
   timestamps: true,
 });
 
-module.exports = GoalSchema;
+module.exports = goalSchema;
