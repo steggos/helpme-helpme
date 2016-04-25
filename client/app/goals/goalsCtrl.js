@@ -4,9 +4,9 @@ angular
 
 // Dependency injection. Done this way for minification purposes.
 // See https://docs.angularjs.org/tutorial/step_05 for more info on minification.
-GoalsController.$inject = ['$scope', 'auth', 'Goals'];
+GoalsController.$inject = ['$scope', 'auth', 'Goals', 'Profile'];
 
-function GoalsController($scope, auth, Goals) {
+function GoalsController($scope, auth, Goals, Profile) {
   // User information from our MongoDB
   $scope.user = {};
 
@@ -68,6 +68,7 @@ function GoalsController($scope, auth, Goals) {
     }
   });
 
+  // Returns suggested guides based on category selected
   $scope.getGuides = function (category) {
     Goals.getGuides(category)
       .then(function (guides) {
@@ -78,6 +79,18 @@ function GoalsController($scope, auth, Goals) {
       });
   };
 
+  // Check for premium account
+  $scope.isPremium = function () {
+    Profile.getProfile($scope.profile.user_id)
+      .then(function (user) {
+        $scope.access = user.premium;
+        console.log($scope.access)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   // Once auth0 profile info has been set, query our database for user's goals
   auth.profilePromise.then(function (profile) {
     $scope.profile = profile;
@@ -85,4 +98,5 @@ function GoalsController($scope, auth, Goals) {
   });
 
   $scope.getCatagories();
+  $scope.isPremium();
 }

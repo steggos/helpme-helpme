@@ -18,7 +18,7 @@ function Profile($http) {
         });
     },
 
-    // Update user profile 
+    // Update user profile
     updateProfile: function (user_id, data) {
       return $http({
         method: 'POST',
@@ -125,7 +125,7 @@ function Profile($http) {
     *
     * @param newCount {Object} - object containing key value pair of posts and its number of comments
     * { <post>: <comment count> }
-    * 
+    *
     * @param currentPosts {Array} - an array of post objects
     * [{
     *   post: post

@@ -38,6 +38,15 @@
   display: block;
 }
 
+.guide-blocked {
+  filter: blur(4px) opacity(1);
+  // Browser Specific
+  -webkit-filter: blur(4px) opacity(1);
+  -moz-filter: blur(4px) opacity(1);
+  -o-filter: blur(4px) opacity(1);
+  -ms-filter: blur(4px) opacity(1);
+}
+
 .content {
   @include make-sm-column(9);
   @include make-sm-column-offset(3);

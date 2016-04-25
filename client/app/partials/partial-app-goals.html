@@ -53,12 +53,15 @@
   <!-- Suggested Guides -->
   <div class="panel panel-default" ng-show="guides">
     <div class="panel-body">
-      <legend>Suggested Guides - Premium User</legend>
+      <legend ng-if="access">Suggested Guides - Premium User</legend>
+      <legend style="color: red" ng-if="!access">Suggested Guides - Must be a Premium User!</legend>
       <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" ng-repeat="guide in guides">
           <div class="row">
             <div class="col-md-12">
-              <a href="{{ guide.file }}" target="_blank"><img class="img-thumbnail" ng-src="{{ guide.icon }}"></a>
+              <a ng-if="access" ng-href="{{ guide.file }}" target="_blank"><img class="img-thumbnail" ng-src="{{ guide.icon }}"></a>
+              <a ng-if="!access" ui-sref="app.premium"><img class="img-thumbnail guide-blocked" title="Get Premium" ng-src="{{ guide.icon }}">
+              </a>
             </div>
           </div>
           <div class="row">
