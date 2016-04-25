@@ -12,10 +12,10 @@ db.once('open', function () {
   console.log('Mongodb connection open');
 });
 
-// middleware and routing configuration
 require('./config/middleware.js')(app, express);
 require('./config/route.js')(app, express);
 
+// Grunt sync will reroute this to 5000
 var port = process.env.PORT || 3000;
 
 app.listen(port);
