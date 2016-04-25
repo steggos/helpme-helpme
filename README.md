@@ -4,9 +4,10 @@
 
 ## Team
 
-  - __Product Owner__: Aaron Hildebrand
-  - __Scrum Master__: Kevin Chen
-  - __Development Team Members__: Rocky Murdoch
+  - __Product Owner__: Ryan Haase
+  - __Scrum Master__: Todd Bontrager
+  - __Full Stack Developer__: Jak Buttarazzi
+  - __Full Stack Developer__: Rob Bruhn
 
 ## Table of Contents
 
@@ -38,19 +39,20 @@ npm install
 bower install
 ```
 
-Set up a free Auth0 account, then add a file named `.env` containing the following:
+Set up an Auth0 account and a Stripe account, then add a file named `.env` containing the following:
 
 ```sh
 # .env file
-AUTH0_CLIENT_SECRET=yourClientSecretFromAuth0
-AUTH0_CLIENT_ID=yourClientIdFromAuth0
-AUTH0_DOMAIN=yourAuth0Domain
+AUTH0_CLIENT_SECRET=[YOUR_AUTH0_CLIENT_SECRET]
+AUTH0_CLIENT_ID=[YOUR_AUTH0_CLIENT_ID]
+AUTH0_DOMAIN=[YOUR_AUTH0_DOMAIN]
+STRIPE_KEY=[YOUR_STRIPE_KEY]
 ```
 
 
 ### Roadmap
 
-View the project roadmap [here](https://github.com/hrr14-hera/hrr14-hera/issues)
+View the project roadmap [here](https://github.com/steggos/helpme-helpme/issues)
 
 
 ## Contributing
