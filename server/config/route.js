@@ -3,7 +3,7 @@ var userController = require('../users/userController');
 var postController = require('../posts/postController');
 var guideController = require('../guides/guideController');
 var helpers = require('./helper');
-var stripe = require("stripe")(process.env.STRIPE_KEY);
+var stripe = require('stripe')(process.env.STRIPE_KEY);
 
 module.exports = function(app, express) {
   app.route('/api/goals/:user_id')
@@ -31,11 +31,11 @@ module.exports = function(app, express) {
   app.get('/api/main/:user_id', userController.getFriendsPosts);
   app.get('/api/main/inactive/:user_id', userController.getInactiveFriends);
 
-  app.post('/api/comment/:user_id', postController.addComment);
-  app.post('/api/signin/', userController.addUser);
-
   app.get('/api/guides/', guideController.getAll);
   app.get('/api/guides/:category', guideController.getByCategory);
+
+  app.post('/api/signin/', userController.addUser);
+  app.post('/api/comment/:user_id', postController.addComment);
   app.get('/api/categories', guideController.getCategories);
 
   app.post('/api/charge/', function (req, res) {
