@@ -89,18 +89,24 @@ function config(authProvider, $stateProvider, $urlRouterProvider, $httpProvider,
     });
 
   // Event handler for auth to check for loginSuccess
-  authProvider.on('loginSuccess', function($state, profilePromise, idToken, store, UserAuth) {
-    console.log('Login Success');
-    profilePromise.then(function(profile) {
-      // Add user to our MongoDB if user doesn't already exist
-      UserAuth.addUserToDB(profile);
+  authProvider.on('loginSuccess', [
+    '$state',
+    'profilePromise',
+    'idToken',
+    'store',
+    'UserAuth',
+    function($state, profilePromise, idToken, store, UserAuth) {
+      console.log('Login Success');
+      profilePromise.then(function(profile) {
+        // Add user to our MongoDB if user doesn't already exist
+        UserAuth.addUserToDB(profile);
 
-      // Save auth profile and token in local storage
-      store.set('profile', profile);
-      store.set('token', idToken);
-    });
-    $state.go('app.main');
-  });
+        // Save auth profile and token in local storage
+        store.set('profile', profile);
+        store.set('token', idToken);
+      });
+      $state.go('app.main');
+  }]);
 
   // Event handler for auth to check for loginFailure
   authProvider.on('loginFailure', function() {

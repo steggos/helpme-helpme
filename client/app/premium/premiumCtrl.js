@@ -1,8 +1,4 @@
-angular.module('app.premium', [
-  'app.goals',
-  'ngAnimate',
-  'ui.bootstrap'
-])
+angular.module('app.premium', [])
 .controller('PremiumController', PremiumController);
 // Dependency injection. Done this way for minification purposes.
 PremiumController.$inject = ['$scope', 'auth', 'Premium', 'Goals', '$uibModal'];

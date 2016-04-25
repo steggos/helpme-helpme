@@ -26,9 +26,7 @@ gulp.task('optimize', function() {
       .pipe($.concat('app.js'))
       .pipe(gulp.dest(paths.dist))
       .pipe($.rename('app.min.js'))
-      .pipe($.uglify({
-        mangle: false
-      }))
+      .pipe($.uglify())
       .pipe($.sourcemaps.write('./'))
       .pipe(gulp.dest(paths.dist))
       .on('error', function(err) {
