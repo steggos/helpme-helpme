@@ -29,11 +29,11 @@
             <input ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card"/>
             <input ng-model="expiry" placeholder="Expiration" payments-format="expiry"payments-validate="expiry"/>
             <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc"/>
-              <button class="btn btn-default" type="submit" data-dismiss="modal">Submit</button>
+              <button class="btn btn-default" id="submit-btn" type="submit" data-dismiss="modal">Submit</button>
           </form>
       </div>
     <div class="modal-footer">
-      <button class="btn btn-warning" type="button" data-dismiss="modal" ng-click="cancel()">Cancel</button>
+      <button class="btn btn-warning" id="cancel-btn" type="button" data-dismiss="modal" ng-click="cancel()">Cancel</button>
       <div class="pull-left">Card processing powered by <strong>Stripe&reg;</strong></div>
       </div>
     </div>
