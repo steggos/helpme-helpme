@@ -8,16 +8,19 @@
   },
   "author": "HRR14 Team Hera",
   "contributors": [
+    "Jak Buttarazzi <jakrazzi@gmail.com>",
+    "Rob Bruhn <rdbruhn@gmail.com>",
+    "Ryan Haase <ryandhaase@gmail.com>",
+    "Todd Bontrager <bontragertodd@gmail.com>",
     "Aaron Hildebrand <aaron.hildebrand@gmail.com>",
-    "Jesse Mavi <jesse.mavi@gmail.com>",
     "Kevin Chen <kevnchn@gmail.com>",
     "Rocky Murdoch <rockysta009@gmail.com>"
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hrr14-hera/hrr14-hera/issues"
+    "url": "https://github.com/steggos/helpme-helpme/issues"
   },
-  "homepage": "https://github.com/hrr14-hera/hrr14-hera#readme",
+  "homepage": "https://helpmehelpme.herokuapp.com",
   "scripts": {
     "start": "node server/server.js",
     "postinstall": "bower install && gulp deploy"
