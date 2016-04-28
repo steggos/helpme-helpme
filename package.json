@@ -1,12 +1,12 @@
 {
-  "name": "hrr14-hera",
+  "name": "Steggos Helpme Helpme",
   "version": "1.0.0",
   "description": "\"help me, help me. social motivation app\"",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hrr14-hera/hrr14-hera.git"
+    "url": "git+https://github.com/steggos/helpme-helpme.git"
   },
-  "author": "HRR14 Team Hera",
+  "author": "Steggos Team",
   "contributors": [
     "Jak Buttarazzi <jakrazzi@gmail.com>",
     "Rob Bruhn <rdbruhn@gmail.com>",
